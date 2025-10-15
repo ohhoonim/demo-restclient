@@ -1,13 +1,18 @@
 package dev.ohhoonim.demo_restclient.jsonPlaceholder.port;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.service.annotation.DeleteExchange;
 import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.HttpExchange;
+import org.springframework.web.service.annotation.PostExchange;
+import org.springframework.web.service.annotation.PutExchange;
 
-import dev.ohhoonim.demo_restclient.jsonPlaceholder.application.SearchReq;
 import dev.ohhoonim.demo_restclient.jsonPlaceholder.model.Comment;
 import dev.ohhoonim.demo_restclient.jsonPlaceholder.model.Post;
 
@@ -15,17 +20,22 @@ import dev.ohhoonim.demo_restclient.jsonPlaceholder.model.Post;
 public interface PostClient {
 
     @GetExchange("/posts/{id}")
-    Optional<Post> postDetails(@PathVariable("id") int id);
+    Optional<Post> postDetails(@PathVariable("id") int postId);
 
-    List<Comment> postComments(int postId);
+    @GetExchange("/posts/{id}/comments")
+    List<Comment> postComments(@PathVariable("id") int postId);
 
-    Post udpatePost(Post post);
+    @PutExchange("/posts")
+    Post updatePost(@RequestBody Post post);
 
-    List<Post> searchFilterPosts(SearchReq searchReq);
+    @GetExchange("/posts")
+    List<Post> searchFilterPosts(@RequestParam Map<String, Object> searchReq);
 
-    void deletePost(int postId);
+    @DeleteExchange("/posts/{id}")
+    void deletePost(@PathVariable("id") int postId);
 
-    Post createPost(Post newPost);
+    @PostExchange("/posts")
+    Post createPost(@RequestBody Post newPost);
     
 
 
