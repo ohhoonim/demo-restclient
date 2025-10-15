@@ -1,4 +1,4 @@
-package dev.ohhoonim.demo_restclient.jsonPlaceholder.api;
+package dev.ohhoonim.demo_restclient.jsonPlaceholder.port;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

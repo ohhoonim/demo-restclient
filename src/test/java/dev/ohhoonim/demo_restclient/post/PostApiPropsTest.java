@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 import org.springframework.context.annotation.Bean;
 
-import dev.ohhoonim.demo_restclient.jsonPlaceholder.api.PostApiProps;
+import dev.ohhoonim.demo_restclient.jsonPlaceholder.port.PostApiProps;
 
 public class PostApiPropsTest {
 

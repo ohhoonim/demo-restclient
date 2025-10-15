@@ -1,7 +1,10 @@
 package dev.ohhoonim.demo_restclient.jsonPlaceholder.application;
 
+import dev.ohhoonim.demo_restclient.jsonPlaceholder.model.Post;
+
 public interface CreatePostActivity {
     
+    Post createPost(Post newPost);
 }
 
 /*

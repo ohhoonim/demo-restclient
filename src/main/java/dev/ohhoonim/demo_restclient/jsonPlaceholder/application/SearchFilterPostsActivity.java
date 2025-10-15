@@ -1,7 +1,12 @@
 package dev.ohhoonim.demo_restclient.jsonPlaceholder.application;
 
+import java.util.List;
+
+import dev.ohhoonim.demo_restclient.jsonPlaceholder.model.Post;
+
 public interface SearchFilterPostsActivity {
     
+  List<Post> searchFilterPosts(SearchReq searchReq);
 }
 
 /*
