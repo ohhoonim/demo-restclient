@@ -45,13 +45,13 @@ public class PostService implements CreatePostActivity, DeletePostActivity,
 
     @Override
     public Post updatePost(Post post) {
-        return postClient.udpatePost(post);
+        return postClient.updatePost(post);
     }
 
     @Override
     public List<Post> searchFilterPosts(SearchReq searchReq) {
         return Objects.requireNonNullElse(
-                postClient.searchFilterPosts(searchReq), List.of());
+                postClient.searchFilterPosts(searchReq.toMap()), List.of());
     }
 
     @Override
