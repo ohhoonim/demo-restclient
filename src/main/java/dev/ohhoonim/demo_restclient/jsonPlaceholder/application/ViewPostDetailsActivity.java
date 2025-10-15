@@ -1,7 +1,11 @@
 package dev.ohhoonim.demo_restclient.jsonPlaceholder.application;
 
+import dev.ohhoonim.demo_restclient.jsonPlaceholder.model.Post;
+
 public interface ViewPostDetailsActivity {
-    
+
+  Post postDetails(int postId);
+
 }
 
 /*

@@ -2,6 +2,7 @@ package dev.ohhoonim.demo_restclient.jsonPlaceholder.application;
 
 public interface DeletePostActivity {
     
+    void deletePost(int postId);
 }
 
 /*
