@@ -61,12 +61,12 @@ public class JsonPlaceholderClientTest {
 
     @Test
     void updatePost() {
-        setMockServer("/posts", expectedPost);
+        setMockServer("/posts/1", expectedPost);
         Post newPost = new Post(1,
                 1,
                 "sunt aut face",
                 "quia et su");
-        Post post = postClient.updatePost(newPost);
+        Post post = postClient.updatePost(newPost.id(), newPost);
 
         mockServer.verify();
         assertThat(post.id()).isEqualTo(1);
