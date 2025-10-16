@@ -25,8 +25,8 @@ public interface PostClient {
     @GetExchange("/posts/{id}/comments")
     List<Comment> postComments(@PathVariable("id") int postId);
 
-    @PutExchange("/posts")
-    Post updatePost(@RequestBody Post post);
+    @PutExchange("/posts/{id}")
+    Post updatePost(@PathVariable("id") int id, @RequestBody Post post);
 
     @GetExchange("/posts")
     List<Post> searchFilterPosts(@RequestParam Map<String, Object> searchReq);

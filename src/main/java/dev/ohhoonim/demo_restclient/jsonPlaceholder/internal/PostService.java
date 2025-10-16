@@ -45,7 +45,7 @@ public class PostService implements CreatePostActivity, DeletePostActivity,
 
     @Override
     public Post updatePost(Post post) {
-        return postClient.updatePost(post);
+        return postClient.updatePost(post.id(), post);
     }
 
     @Override
